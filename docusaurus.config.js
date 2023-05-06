@@ -4,31 +4,27 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 // With JSDoc @type annotations, IDEs can provide config autocompletion
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (module.exports = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Matan Heled - Blog and Site',
+  tagline: 'Welcome to my blog!',
+  url: 'https://blog.matanheled.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'MatanHeled', // Usually your GitHub org/user name.
+  projectName: 'blog', // Usually your repo name.
 
   presets: [
     [
       '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
-        },
+        docs: false,
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/main/website/blog/',
+            'https://github.com/MatanHeled/blog',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -41,21 +37,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Matan Heled',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
+          {to: '/blog/about', label: 'About', position: 'left'},
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/MatanHeled/blog',
             label: 'GitHub',
             position: 'right',
           },
@@ -65,12 +56,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Navigation',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'About',
+                to: '/blog/about',
               },
+              {
+                label: 'Blog',
+                to: '/blog',
+              }
             ],
           },
           {
@@ -93,10 +88,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/docusaurus',
